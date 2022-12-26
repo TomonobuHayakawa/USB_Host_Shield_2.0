@@ -31,6 +31,9 @@ USB::USB() : bmHubPre(0) {
 void USB::init() {
         //devConfigIndex = 0;
         bmHubPre = 0;
+        for(uint8_t i = 0; i < USB_NUMDEVICES; i++) {
+          devConfig[i] = 0;
+        }
 }
 
 uint8_t USB::getUsbTaskState(void) {
