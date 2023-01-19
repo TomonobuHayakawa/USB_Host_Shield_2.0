@@ -182,7 +182,7 @@ void MAX3421e< SPI_SS, INTR >::regWr(uint8_t reg, uint8_t data) {
         XMEM_ACQUIRE_SPI();
 #if defined(SPI_HAS_TRANSACTION)
 #if defined(ARDUINO_ARCH_SPRESENSE)
-        USB_SPI.beginTransaction(SPISettings(13000000, MSBFIRST, SPI_MODE3)); // The MAX3421E can handle up to 13MHz, use MSB First and SPI mode 3
+        USB_SPI.beginTransaction(SPISettings(2000000, MSBFIRST, SPI_MODE3)); // The MAX3421E can handle up to 13MHz, use MSB First and SPI mode 3
 #else
         USB_SPI.beginTransaction(SPISettings(26000000, MSBFIRST, SPI_MODE0)); // The MAX3421E can handle up to 26MHz, use MSB First and SPI mode 0
 #endif
@@ -229,7 +229,7 @@ uint8_t* MAX3421e< SPI_SS, INTR >::bytesWr(uint8_t reg, uint8_t nbytes, uint8_t*
         XMEM_ACQUIRE_SPI();
 #if defined(SPI_HAS_TRANSACTION)
 #if defined(ARDUINO_ARCH_SPRESENSE)
-        USB_SPI.beginTransaction(SPISettings(13000000, MSBFIRST, SPI_MODE3)); // The MAX3421E can handle up to 13MHz, use MSB First and SPI mode 3
+        USB_SPI.beginTransaction(SPISettings(2000000, MSBFIRST, SPI_MODE3)); // The MAX3421E can handle up to 13MHz, use MSB First and SPI mode 3
 #else
         USB_SPI.beginTransaction(SPISettings(26000000, MSBFIRST, SPI_MODE0)); // The MAX3421E can handle up to 26MHz, use MSB First and SPI mode 0
 #endif
@@ -308,7 +308,7 @@ uint8_t MAX3421e< SPI_SS, INTR >::regRd(uint8_t reg) {
         XMEM_ACQUIRE_SPI();
 #if defined(SPI_HAS_TRANSACTION)
 #if defined(ARDUINO_ARCH_SPRESENSE)
-        USB_SPI.beginTransaction(SPISettings(13000000, MSBFIRST, SPI_MODE3)); // The MAX3421E can handle up to 13MHz, use MSB First and SPI mode 3
+        USB_SPI.beginTransaction(SPISettings(2000000, MSBFIRST, SPI_MODE3)); // The MAX3421E can handle up to 13MHz, use MSB First and SPI mode 3
 #else
         USB_SPI.beginTransaction(SPISettings(26000000, MSBFIRST, SPI_MODE0)); // The MAX3421E can handle up to 26MHz, use MSB First and SPI mode 0
 #endif
@@ -358,7 +358,7 @@ uint8_t* MAX3421e< SPI_SS, INTR >::bytesRd(uint8_t reg, uint8_t nbytes, uint8_t*
         XMEM_ACQUIRE_SPI();
 #if defined(SPI_HAS_TRANSACTION)
 #if defined(ARDUINO_ARCH_SPRESENSE)
-        USB_SPI.beginTransaction(SPISettings(13000000, MSBFIRST, SPI_MODE3)); // The MAX3421E can handle up to 13MHz, use MSB First and SPI mode 3
+        USB_SPI.beginTransaction(SPISettings(2000000, MSBFIRST, SPI_MODE3)); // The MAX3421E can handle up to 13MHz, use MSB First and SPI mode 3
 #else
         USB_SPI.beginTransaction(SPISettings(26000000, MSBFIRST, SPI_MODE0)); // The MAX3421E can handle up to 26MHz, use MSB First and SPI mode 0
 #endif
